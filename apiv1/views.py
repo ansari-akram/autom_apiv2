@@ -37,7 +37,7 @@ def login(request):
         user = User.objects.get(username=request.POST['username'])
         if check_password(request.POST['password'], user.password):
             ha_user = HAUser.objects.get(user=user)
-            return JsonResponse({'200': ha_user.id})
+            return JsonResponse({'200': ha_user.id, 'username': ha_user.user.username})
         else:
             return JsonResponse({'404': 'provide valid credentials'})
     except:
