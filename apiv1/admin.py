@@ -3,7 +3,7 @@ from .models import *
 
 
 class HAUserAdmin(admin.ModelAdmin):
-    list_display = ('id', 'phone')
+    list_display = ('id', 'phone', 'change_request', 'change_uuid')
 
 
 class RoomAdmin(admin.ModelAdmin):

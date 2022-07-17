@@ -15,4 +15,6 @@ urlpatterns = [
     path('', include(router.urls)),
     path('register/', register, name='register'),
     path('login/', login, name='login'),
+    path('forget-password/', forget_password, name='forget_password'),
+    path('set-password/', set_password, name='set_password'),
 ]
