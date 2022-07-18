@@ -94,10 +94,10 @@ def forget_password(request):
         server.sendmail(SENDER, [recipient], msg.as_string())
         server.quit()
 
-        return JsonResponse({'200': f'Email sent to {user.username}'})
+        return JsonResponse({'status': '200', 'message': f'Email sent to {user.username}'})
 
     except:
-        return JsonResponse({'404': 'User not found'})
+        return JsonResponse({'status': '404', 'message': 'User not found'})
 
 
 @csrf_exempt
