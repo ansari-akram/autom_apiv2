@@ -75,7 +75,7 @@ def login(request):
 @csrf_exempt
 def forget_password(request):
     try:
-        user = User.objects.get(email=request.POST['email'])
+        user = User.objects.get(username=request.POST['username'])
         recipient = user.email
         _uuid4 = str(uuid.uuid4())
 
@@ -103,7 +103,7 @@ def forget_password(request):
 @csrf_exempt
 def set_password(request):
     try:
-        user = User.objects.get(email=request.POST['email'])
+        user = User.objects.get(username=request.POST['username'])
         password = request.POST['password']
         uid = request.POST['uuid']
 
