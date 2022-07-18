@@ -115,13 +115,13 @@ def set_password(request):
             ha_user.save()
             user.set_password(password)
             user.save()
-            return JsonResponse({'201': 'Password set successfully'})
+            return JsonResponse({'status': '201', 'message': 'Password set successfully'})
         
         else:
-            return JsonResponse({'400': 'Unique ID is incorrect'})
+            return JsonResponse({'status': '400', 'message': 'Unique ID is incorrect'})
 
     except:
-        return JsonResponse({'404': 'User not found.'})
+        return JsonResponse({'status': '404', 'message': 'User not found.'})
 
 
 class RoomViewSet(viewsets.ModelViewSet):
