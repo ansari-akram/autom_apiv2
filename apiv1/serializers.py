@@ -21,7 +21,7 @@ class MCU8Serializer(serializers.ModelSerializer):
 
     class Meta:
         model = MCU8
-        fields = ['id', 'user', 'mcu_type', 'mcu_name']
+        fields = ['id', 'user', 'mcu_type', 'mcu_name', 'mcu_ip']
 
 
 class RoomDeviceSerializer(serializers.ModelSerializer):
