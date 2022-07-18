@@ -118,7 +118,7 @@ def set_password(request):
             return JsonResponse({'201': 'Password set successfully'})
         
         else:
-            return JsonResponse({'400': 'Password set failed'})
+            return JsonResponse({'400': 'Unique ID is incorrect'})
 
     except:
         return JsonResponse({'404': 'User not found.'})
