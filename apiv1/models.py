@@ -44,7 +44,7 @@ class MCUType(models.Model):
 
 class MCU8(models.Model):
     user = models.ForeignKey(HAUser, on_delete=models.CASCADE)
-    mcu_name = models.CharField(default='', max_length=100)
+    mcu_name = models.CharField(default='', unique=True, max_length=100)
     mcu_type = models.ForeignKey(MCUType, on_delete=models.CASCADE)
     mcu_ip = models.GenericIPAddressField(default="0.0.0.0")
 
